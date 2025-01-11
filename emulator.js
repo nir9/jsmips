@@ -1,3 +1,14 @@
+var instructions = [];
+
+function render()
+{
+	document.getElementById("output").innerHTML = "";
+
+	for (var i = 0; i < instructions.length; i++) {
+		document.getElementById("output").innerHTML += "0x" + (i*4).toString(16) + ": " + instructions[i] + "<br>";
+	}
+}
+
 function padWithZeros(howMany, value)
 {
 	var result = [];
@@ -31,5 +42,8 @@ function parseInstruction()
 	encoded += " " + padWithZeros(5, parseInt(dest.slice(1)).toString(2));
 	encoded += " 00000";
 	encoded += " 100000";
-	document.getElementById("output").innerHTML = encoded;
+
+	instructions.push(encoded);
+
+	render();
 }

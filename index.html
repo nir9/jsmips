@@ -1,14 +1,36 @@
 <html>
 	<head>
 		<title>JSMIPS</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 32px;
+				text-align: center;
+				background-color: black;
+				color: white;
+			}
+
+			button {
+				font-size: 32px;
+			}
+
+			input {
+				font-size: 32px;
+			}
+		</style>
 		<script src="emulator.js"></script>
 	</head>
 	<body>
 		Try "add $1, $2, $3" for example.
 		<br>
+		<br>
 		Encode the instruction:
+		<br>
+		<br>
 		<input type="text" id="instruction" />
-		<button onClick="parseInstruction()">Submit</button>
+		<button onClick="parseInstruction()">Encode</button>
+		<br>
+		<br>
 		<div id="output">
 		</div>
 	</body>
